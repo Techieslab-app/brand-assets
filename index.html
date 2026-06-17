@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Techies Lab — Brand Hub</title>
+<link rel="icon" href="techieslab/assets/logo-techieslab.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..600&family=Inter:wght@300;400;500;600&family=Modak&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#0a0a14;--violet:#8070F8;--violet-l:#A090F8;--coral:#ff7a59;--white:#fff;--dim:rgba(255,255,255,.6);--faint:rgba(255,255,255,.4);--line:rgba(255,255,255,.1);
+    --sans:"Inter",system-ui,sans-serif;--serif:"EB Garamond",Georgia,serif}
+  body{font-family:var(--sans);background:var(--bg);color:var(--white);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+    radial-gradient(1.4px 1.4px at 16% 20%,rgba(255,255,255,.7),transparent),
+    radial-gradient(1.3px 1.3px at 70% 30%,rgba(160,144,248,.8),transparent),
+    radial-gradient(1.4px 1.4px at 40% 72%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1.3px 1.3px at 86% 80%,rgba(88,200,248,.7),transparent),
+    radial-gradient(800px 520px at 50% -10%,rgba(128,112,248,.18),transparent 70%)}
+  .wrap{max-width:1000px;margin:0 auto;padding:80px 28px 64px}
+  .label{font-size:.72rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--violet-l);text-align:center}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,7vw,4.6rem);text-align:center;line-height:1.05;margin-top:14px}
+  h1 em{color:var(--violet-l)}
+  .intro{text-align:center;color:var(--dim);max-width:560px;margin:18px auto 0}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:54px}
+  @media(max-width:720px){.cards{grid-template-columns:1fr}}
+  .kit{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:24px;padding:36px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+  .kit:hover{transform:translateY(-6px)}
+  .kit.tl{background:linear-gradient(165deg,#15132a,#0a0a14)}
+  .kit.tl:hover{border-color:rgba(160,144,248,.6);box-shadow:0 30px 60px -28px rgba(128,112,248,.6)}
+  .kit.ab{background:linear-gradient(165deg,#241310,#0a0a14)}
+  .kit.ab:hover{border-color:rgba(255,122,89,.6);box-shadow:0 30px 60px -28px rgba(255,104,66,.55)}
+  .kit .ic{width:84px;height:84px;border-radius:18px;object-fit:contain;background:rgba(255,255,255,.04);padding:8px}
+  .kit h2{font-family:var(--serif);font-weight:400;font-size:2rem;margin-top:22px}
+  .kit.ab h2{font-family:"Modak",cursive;color:var(--coral);font-size:2.4rem}
+  .kit p{color:var(--dim);font-size:.95rem;margin-top:8px}
+  .kit .go{margin-top:20px;font-size:.84rem;font-weight:600;letter-spacing:.02em}
+  .kit.tl .go{color:var(--violet-l)}
+  .kit.ab .go{color:var(--coral)}
+  footer{text-align:center;color:var(--faint);font-size:.84rem;margin-top:56px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="label">Brand Hub</div>
+  <h1>Techies Lab <em>brand kits</em></h1>
+  <p class="intro">Two living brand books — one for the community, one for the bot. Logos, mascots, color, type and voice, all in one place.</p>
+
+  <div class="cards">
+    <a class="kit tl" href="techieslab/index.html">
+      <img class="ic" src="techieslab/assets/logo-techieslab.png" alt="Techies Lab" />
+      <h2>Techies Lab</h2>
+      <p>techies.lab.app — a constellation of builders. Glyph mark, Pixel Pet mascot, dark-violet palette, EB Garamond + Inter.</p>
+      <div class="go">Open kit →</div>
+    </a>
+    <a class="kit ab" href="antibot/index.html">
+      <img class="ic" src="antibot/assets/logo-antibot.svg" alt="Antibot" />
+      <h2>antibot</h2>
+      <p>Not a Bot. a heat to your server. Flame mascot system, four personalities, coral palette, Modak + Inter.</p>
+      <div class="go">Open kit →</div>
+    </a>
+  </div>
+
+  <footer>Packaged by Techies Lab · 2026</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Antibot — Brand Kit</title>
+<link rel="icon" href="assets/logo-antibot.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Modak&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --coral:#ff7a59; --ember:#ff6842; --peach:#ff8f73;
+    --cream:#fdfcfb; --linen:#fafaf9; --char:#161616;
+    --ink:#2b2422; --muted:#8a807b; --line:#efe7e2;
+    --sans:"Inter",-apple-system,system-ui,sans-serif;
+    --display:"Modak",system-ui,cursive;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .label{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--coral)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(253,252,251,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:24px;height:60px}
+  nav img{height:26px}
+  nav .links{margin-left:auto;display:flex;gap:22px;font-size:.86rem;font-weight:500}
+  nav .links a{color:var(--muted);text-decoration:none;transition:color .2s}
+  nav .links a:hover{color:var(--coral)}
+  @media(max-width:680px){nav .links{display:none}}
+
+  /* hero */
+  header.hero{padding:84px 0 60px;text-align:center;position:relative;overflow:hidden}
+  header.hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(60% 60% at 50% 0%,rgba(255,122,89,.16),transparent 70%);pointer-events:none}
+  .hero h1{font-family:var(--display);font-size:clamp(4.5rem,16vw,11rem);line-height:.9;color:var(--coral);
+    letter-spacing:.01em;text-shadow:3px 3px 0 rgba(22,22,22,.08)}
+  .hero .tag{font-size:clamp(1.2rem,3.4vw,1.9rem);font-weight:600;margin-top:8px;color:var(--char)}
+  .hero .tag em{color:var(--coral);font-style:normal}
+  .hero p.sub{max-width:560px;margin:18px auto 0;color:var(--muted);font-size:1.02rem}
+  .hero .mascot{margin:34px auto 0;max-width:540px;width:100%;border-radius:22px;display:block;box-shadow:0 24px 60px -22px rgba(255,104,66,.5)}
+
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:34px}
+  .sec-head h2{font-family:var(--display);font-size:clamp(2rem,5vw,3.1rem);color:var(--char);line-height:1;margin-top:10px;font-weight:400}
+  .sec-head p{color:var(--muted);margin-top:10px;max-width:620px}
+
+  /* logo */
+  .logo-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+  @media(max-width:680px){.logo-grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+  .card.dark{background:var(--char)}
+  .card img{max-width:100%;height:auto}
+  .card .cap{font-size:.78rem;color:var(--muted);text-align:center}
+  .card.dark .cap{color:#b8b0ac}
+  .dl{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:var(--coral);text-decoration:none;
+    border:1px solid var(--coral);border-radius:999px;padding:6px 14px;transition:.2s}
+  .dl:hover{background:var(--coral);color:#fff}
+
+  /* mascot gallery */
+  .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;transition:transform .2s,box-shadow .2s}
+  .tile:hover{transform:translateY(-4px);box-shadow:0 16px 34px -18px rgba(255,104,66,.45)}
+  .tile img{width:100%;height:150px;object-fit:contain}
+  .tile .name{font-weight:600;font-size:.9rem;margin-top:12px;color:var(--char)}
+  .tile .desc{font-size:.76rem;color:var(--muted);margin-top:3px}
+  .renders{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
+  .renders img{width:100%;border-radius:16px;border:1px solid var(--line);display:block}
+
+  /* color */
+  .sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .sw{border-radius:16px;border:1px solid var(--line);overflow:hidden;cursor:pointer;background:#fff}
+  .sw .chip{height:96px}
+  .sw .meta{padding:11px 13px}
+  .sw .nm{font-weight:600;font-size:.86rem}
+  .sw .hex{font-size:.78rem;color:var(--muted);font-family:ui-monospace,monospace;text-transform:uppercase}
+
+  /* type */
+  .type-row{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 30px;margin-bottom:16px}
+  .type-row .meta{font-size:.8rem;color:var(--muted);margin-bottom:8px}
+  .spec-display{font-family:var(--display);font-size:clamp(2.4rem,7vw,4.4rem);color:var(--coral);line-height:1}
+  .spec-body{font-size:1.15rem;color:var(--ink)}
+  .spec-body .w{display:flex;gap:18px;flex-wrap:wrap;margin-top:6px;font-size:.82rem;color:var(--muted)}
+
+  /* personalities */
+  .pers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .pers .p{border:1px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(160deg,#fff, #faf3f0)}
+  .pers .p h4{font-family:var(--display);font-weight:400;font-size:1.5rem;color:var(--char)}
+  .pers .p span{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--coral)}
+  .pers .p p{font-size:.88rem;color:var(--muted);margin-top:8px}
+  .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:22px}
+  .feat .f{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+  .feat .f .dot{flex:0 0 9px;width:9px;height:9px;border-radius:50%;background:var(--coral);margin-top:7px}
+  .feat .f b{display:block;color:var(--char);font-size:.92rem}
+  .feat .f p{font-size:.82rem;color:var(--muted);margin-top:2px}
+
+  footer{padding:50px 0 70px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.85rem}
+  footer a{color:var(--coral);text-decoration:none}
+  .copied{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);background:var(--char);color:#fff;padding:9px 18px;border-radius:999px;font-size:.82rem;opacity:0;transition:opacity .25s;pointer-events:none;z-index:50}
+  .copied.show{opacity:1}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <img src="assets/logo-navbar.svg" alt="Antibot" />
+  <div class="links">
+    <a href="#logo">Logo</a><a href="#mascot">Mascot</a><a href="#color">Color</a>
+    <a href="#type">Type</a><a href="#voice">Voice</a><a href="../index.html">↩ Hub</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="label">Techies Lab · Brand Kit</div>
+  <h1>antibot</h1>
+  <div class="tag">Not a Bot. a <em>heat</em> to your server.</div>
+  <p class="sub">Your next-level Discord AI community manager. It starts the conversation, knows what your members are into, and hypes up your server like never before. Heats the room. Adds to the combo.</p>
+  <img class="mascot" src="assets/mascot-360-view.png" alt="Antibot mascot — 360° view" />
+</div></header>
+
+<section id="logo"><div class="wrap">
+  <div class="sec-head"><div class="label">01 — Logo</div>
+    <h2>The mark</h2>
+    <p>The primary antibot mark is a coral flame creature. Use the square mark for avatars and app icons; use the horizontal lockup in navigation bars and headers. Keep clear space of at least the height of the flame around it.</p>
+  </div>
+  <div class="logo-grid">
+    <div class="card">
+      <img src="assets/logo-antibot.svg" alt="Antibot primary logo" style="max-height:300px" />
+      <div class="cap">Primary mark · square</div>
+      <a class="dl" href="assets/logo-antibot.svg" download>↓ SVG</a>
+    </div>
+    <div class="card dark">
+      <img src="assets/logo-navbar.svg" alt="Antibot navbar lockup" style="max-height:90px" />
+      <div class="cap">Horizontal lockup · navigation</div>
+      <a class="dl" href="assets/logo-navbar.svg" download>↓ SVG</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="mascot"><div class="wrap">
+  <div class="sec-head"><div class="label">02 — Mascot system</div>
+    <h2>One creature, many modes</h2>
+    <p>Antibot shape-shifts to match what your server needs. Every variant keeps the flame silhouette and the kawaii face — only the role changes.</p>
+  </div>
+  <div class="gal">
+    <div class="tile"><img src="assets/antibot-circling.gif" alt="Antibot circling"><div class="name">Antibot</div><div class="desc">Idle / looping</div></div>
+    <div class="tile"><img src="assets/strict-mod.svg" alt="Strict mod"><div class="name">Strict Mod</div><div class="desc">Moderation / enforcer</div></div>
+    <div class="tile"><img src="assets/organised.svg" alt="Organised"><div class="name">Organised</div><div class="desc">Admin / structure</div></div>
+    <div class="tile"><img src="assets/server-hyper.svg" alt="Server hyper"><div class="name">Server Hyper</div><div class="desc">Hype / energy</div></div>
+    <div class="tile"><img src="assets/smart.svg" alt="Smart"><div class="name">Smart</div><div class="desc">Looks things up</div></div>
+    <div class="tile"><img src="assets/community-memory.svg" alt="Community memory"><div class="name">Community Memory</div><div class="desc">Remembers members</div></div>
+    <div class="tile"><img src="assets/multipersonalities.svg" alt="Multi-personalities"><div class="name">Multi-personalities</div><div class="desc">Switchable modes</div></div>
+    <div class="tile"><img src="assets/community-jar.svg" alt="Community jar"><div class="name">Community Jar</div><div class="desc">Thanks supporters</div></div>
+    <div class="tile"><img src="assets/community-jar-transparent.svg" alt="Community jar transparent"><div class="name">Community Jar</div><div class="desc">Transparent variant</div></div>
+  </div>
+  <div class="renders">
+    <img src="assets/mascot-360-view.png" alt="360 view" />
+    <img src="assets/render-wide.png" alt="Render wide" />
+    <img src="assets/render-square.png" alt="Render square" />
+    <img src="assets/multipersonalities-art.png" alt="Multi-personalities art" />
+  </div>
+</div></section>
+
+<section id="color"><div class="wrap">
+  <div class="sec-head"><div class="label">03 — Color</div>
+    <h2>Warm by default</h2>
+    <p>Coral is the heat. Cream keeps it breathable. Charcoal is reserved for the mascot face and high-contrast text. Click any swatch to copy the hex.</p>
+  </div>
+  <div class="sw-grid">
+    <div class="sw" data-hex="#FF7A59"><div class="chip" style="background:#FF7A59"></div><div class="meta"><div class="nm">Coral · Primary</div><div class="hex">#FF7A59</div></div></div>
+    <div class="sw" data-hex="#FF6842"><div class="chip" style="background:#FF6842"></div><div class="meta"><div class="nm">Ember · Hover</div><div class="hex">#FF6842</div></div></div>
+    <div class="sw" data-hex="#FF8F73"><div class="chip" style="background:#FF8F73"></div><div class="meta"><div class="nm">Peach · Light</div><div class="hex">#FF8F73</div></div></div>
+    <div class="sw" data-hex="#FDFCFB"><div class="chip" style="background:#FDFCFB;border-bottom:1px solid var(--line)"></div><div class="meta"><div class="nm">Cream · Background</div><div class="hex">#FDFCFB</div></div></div>
+    <div class="sw" data-hex="#FAFAF9"><div class="chip" style="background:#FAFAF9;border-bottom:1px solid var(--line)"></div><div class="meta"><div class="nm">Linen · Surface</div><div class="hex">#FAFAF9</div></div></div>
+    <div class="sw" data-hex="#161616"><div class="chip" style="background:#161616"></div><div class="meta"><div class="nm">Charcoal · Face</div><div class="hex">#161616</div></div></div>
+  </div>
+</div></section>
+
+<section id="type"><div class="wrap">
+  <div class="sec-head"><div class="label">04 — Typography</div>
+    <h2>Modak + Inter</h2>
+    <p>Modak is the primary voice — chunky, warm, unmistakable — used for the wordmark and big moments. Inter carries everything readable: UI, body, captions.</p>
+  </div>
+  <div class="type-row">
+    <div class="meta">Display · Modak · Regular</div>
+    <div class="spec-display">antibot heats the room</div>
+  </div>
+  <div class="type-row">
+    <div class="meta">Body · Inter · 300 / 400 / 500 / 600 / 700</div>
+    <div class="spec-body">Ask a real question and get a sourced answer pulled straight from the web, citations included.</div>
+    <div class="w"><span>Light 300</span><span style="font-weight:400">Regular 400</span><span style="font-weight:500">Medium 500</span><span style="font-weight:600">Semibold 600</span><span style="font-weight:700">Bold 700</span></div>
+  </div>
+</div></section>
+
+<section id="voice"><div class="wrap">
+  <div class="sec-head"><div class="label">05 — Voice & personality</div>
+    <h2>Pick a vibe in three steps</h2>
+    <p>Antibot ships four switchable personalities. Same brain, different attitude.</p>
+  </div>
+  <div class="pers">
+    <div class="p"><span>Mode 01</span><h4>Chaotic</h4><p>Bold, direct, slightly irreverent. Says the thing.</p></div>
+    <div class="p"><span>Mode 02</span><h4>Sarcastic</h4><p>Witty, dry, observational. Raises an eyebrow.</p></div>
+    <div class="p"><span>Mode 03</span><h4>Anime</h4><p>Kawaii, enthusiastic, emoticon-coded ~ ✨</p></div>
+    <div class="p"><span>Mode 04</span><h4>Troll</h4><p>Edgy banter, playfully dismissive. "i refuse to answer."</p></div>
+  </div>
+  <div class="feat">
+    <div class="f"><div class="dot"></div><div><b>Looks things up for you</b><p>Sourced answers from the web, citations included.</p></div></div>
+    <div class="f"><div class="dot"></div><div><b>Keeps members in the loop</b><p>"Catch me up" recaps with links back to where it happened.</p></div></div>
+    <div class="f"><div class="dot"></div><div><b>Equipped with agentic tools</b><p>Moderation, polls, music — just ask in plain English.</p></div></div>
+    <div class="f"><div class="dot"></div><div><b>Remembers members</b><p>Extracts projects, interests and goals from conversation.</p></div></div>
+    <div class="f"><div class="dot"></div><div><b>Channel summaries</b><p>The last N hours, summarized, with source links.</p></div></div>
+    <div class="f"><div class="dot"></div><div><b>Community jar</b><p>Thanks contributors and recognizes top supporters.</p></div></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  Antibot brand kit · Packaged by <a href="../index.html">Techies Lab</a> · 2026<br>
+  Source assets: <code>discord-community-bot/antibot visual materials</code>
+</div></footer>
+
+<div class="copied" id="toast">Copied!</div>
+<script>
+  const toast=document.getElementById('toast');
+  document.querySelectorAll('.sw').forEach(s=>s.addEventListener('click',()=>{
+    const h=s.dataset.hex; navigator.clipboard?.writeText(h);
+    toast.textContent=h+' copied'; toast.classList.add('show');
+    setTimeout(()=>toast.classList.remove('show'),1100);
+  }));
+</script>
+</body>
+</html>
