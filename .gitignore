@@ -1,0 +1,12 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Heavy raw media — keep these in the local-only _local-media/ folder, not in git
+*.mp3
+*.MP3
+*.mov
+*.MOV
+*.mp4
+*.aac
+*.wav
